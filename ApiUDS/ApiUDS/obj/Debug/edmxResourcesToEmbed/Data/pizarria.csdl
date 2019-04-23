@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="pizzariaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="pedido">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tamanho" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="sabor" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="personalizacao" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="valortotal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="tempopreparo" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="pizzariaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="pedido" EntityType="Self.pedido" />
+  </EntityContainer>
+</Schema>
